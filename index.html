@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="emoji1.js"></script>
+    <style type="text/css">
+        body{margin: 0;padding: 0;}
+        *{margin: 0;padding: 0;}
+        .emoji{ width: 500px;margin: 20px auto; position: relative;}
+        .emojiCon{width: 500px;min-height: 300px;border:1px solid #ccc; overflow: hidden;position: absolute;top: 50px;left: 0;background: #fff;display: none;}
+        .emojiCon i{display: block;width: 100%;overflow: hidden;height: 25px;font-style: normal}
+        .emojiCon i span{float: right;font-size: 24px;margin:0 15px 0 0;cursor: pointer;}
+        .textareaCon{width: 500px;min-height: 25px;padding:0 5px; border:1px solid #ccc;font-size: 12px;line-height: 20px;}
+        .emoji p{width: 38px;height: 38px;border:1px solid #f1f1f1;float: left;text-align: center;margin:8px 0 0 8px;cursor: pointer;}
+        .emoji p img{width: 30px;height: 30px;margin-top: 4px;}
+        .setEmoEvt{float: right;}
+        .Add{float: left;}
+        .textareaCon img{margin: 0 3px;}
+        .showDiv{width: 500px;border:1px solid #ccc;min-height: 50px}
+    </style>
+</head>
+<body>
+    <div class="emoji">
+        <div contenteditable=true class="textareaCon" id="textareaCon"></div>
+        <div style="overflow: hidden;width: 100%;"><button class="Add">表情</button><button class="setEmoEvt">提交</button></div>
+        <div class="showDiv"></div>
+    </div>
+    <div class="sss"></div>
+    <script type="text/javascript">
+        $(function () {
+            $(".emoji").setEmoji({
+                Div:{className:"Add"},
+                imgUrl:"img"
+            });
+            $(".setEmoEvt").click(function () {
+                $(".showDiv").html($(".textareaCon").html());
+            });
+        })
+    </script>
+</body>
+</html>
